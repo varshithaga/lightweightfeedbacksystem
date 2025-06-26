@@ -1,0 +1,109 @@
+# Lightweight Feedback System
+
+A simple, lightweight web-based feedback system with role-based login for **Managers** and **Employees**.  
+Managers can create and review feedbacks. Employees can view and acknowledge their feedback.
+
+---
+
+## 🔧 Tech Stack
+
+- **Backend**: Django, Django REST Framework
+- **Frontend**: React.js
+- **Database**: SQLite (can be switched to PostgreSQL/MySQL)
+- **Auth**: Token-based Authentication (DRF Token)
+- **Deployment-ready**: Docker
+
+---
+
+## 📁 Folder Structure
+
+lightweightfeedbacksystem/
+│
+├── feedback_system_backend/ # Django backend
+│ ├── manage.py
+│ ├── Dockerfile
+│ ├── requirements.txt
+│ ├── .gitignore
+│ ├── feedback/ # Django app
+│ │ ├── models.py
+│ │ ├── views.py
+│ │ ├── serializers.py
+│ │ ├── urls.py
+│ │ └── ...
+│ └── feedback_system/ # Django project
+│ ├── settings.py
+│ ├── urls.py
+│ └── ...
+│
+├── frontend/ # React frontend
+│ ├── public/
+│ ├── src/
+│ │ ├── components/
+│ │ │ ├── Login.js
+│ │ │ ├── SignUp.js
+│ │ │ ├── ManagerDashboard.js
+│ │ │ ├── EmployeeDashboard.js
+│ │ │ ├── FeedbackForm.js
+│ │ │ ├── CreateFeedbackPage.js
+│ │ │ ├── FeedbackHistoryPage.js
+│ │ │ ├── EditFeedbackPage.js 
+│ │ │ └── ...
+│ │ ├── pages/
+│ │ │ ├── Login.css
+│ │ │ ├── SignUp.css
+│ │ │ ├── ManagerDashboard.css
+│ │ │ └── ...
+│ │ ├── App.js
+│ │ └── index.js
+│ └── package.json
+│
+└── README.md # This file
+
+
+---
+
+## 🚀 Features
+
+### Manager:
+- Login/Signup
+- View all employees
+- Create feedback
+- View and edit past feedbacks
+- Dashboard with feedback stats & sentiment graph
+
+### Employee:
+- Login/Signup
+- View personal feedbacks
+- Acknowledge feedback
+
+---
+
+## 🔑 Login Info
+
+- Username format:
+  - Managers: `name@manager`
+  - Employees: `name@employee`
+
+---
+
+## ⚙️ Backend Setup
+
+```bash
+cd feedback_system_backend
+python -m venv venv
+venv\Scripts\activate      # On Windows
+pip install -r requirements.txt
+
+# Run migrations
+python manage.py migrate
+
+# Run development server
+python manage.py runserver
+
+
+## ⚙️ Frontend Setup
+
+cd feedback-frontend
+npm install
+npm start
+
